@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BJb-9P-HN3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNY-Md-dfb">
+                                <rect key="frame" x="278" y="102" width="45" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="rotateBtn"/>
+                                <state key="normal" title="Rotate"/>
+                                <connections>
+                                    <action selector="rotate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lsH-UK-g5O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXZ-Ux-juP">
+                                <rect key="frame" x="281" y="163" width="38" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="scaleBtn"/>
+                                <state key="normal" title="Scale"/>
+                                <connections>
+                                    <action selector="scale:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qgh-cA-tt3"/>
+                                    <segue destination="mAm-lp-U5b" kind="show" identifier="scaleSegue" id="6CU-ky-mDK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xXZ-Ux-juP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FIW-oN-Liw"/>
+                            <constraint firstItem="aNY-Md-dfb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RDx-tS-u0t"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="obm-9J-m6L"/>
+                    <connections>
+                        <segue destination="tzK-ta-Uzt" kind="show" identifier="rotateSegue" id="XDa-Ek-vPx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="433" y="-103"/>
+        </scene>
+        <!--Rotate View Controller-->
+        <scene sceneID="ado-Ej-EZ0">
+            <objects>
+                <viewController id="tzK-ta-Uzt" customClass="RotateViewController" customModule="Project4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e8o-yn-oO0"/>
+                        <viewControllerLayoutGuide type="bottom" id="KKU-0r-GdG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vp5-jt-U88">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="I9y-KP-uaX">
+                                <rect key="frame" x="208" y="117" width="184" height="184"/>
+                                <accessibility key="accessibilityConfiguration" identifier="rotateImage"/>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PP4-OE-geD">
+                                <rect key="frame" x="276" y="426" width="51" height="31"/>
+                                <accessibility key="accessibilityConfiguration" identifier="rotateSwitch"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PP4-OE-geD" firstAttribute="centerX" secondItem="Vp5-jt-U88" secondAttribute="centerX" id="1MK-zP-Ls9"/>
+                            <constraint firstItem="I9y-KP-uaX" firstAttribute="centerX" secondItem="Vp5-jt-U88" secondAttribute="centerX" id="RFm-uP-S96"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="rotateImage" destination="I9y-KP-uaX" id="PGD-iP-o3A"/>
+                        <outlet property="rotateSwitch" destination="PP4-OE-geD" id="Rn6-I0-Mcy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CVK-aa-ysj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1187" y="-313"/>
+        </scene>
+        <!--Scale View Controller-->
+        <scene sceneID="rlG-jc-7AU">
+            <objects>
+                <viewController id="mAm-lp-U5b" customClass="ScaleViewController" customModule="Project4" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VYN-tL-01u"/>
+                        <viewControllerLayoutGuide type="bottom" id="EFS-uS-72x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rI4-gm-IAV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="Onc-5u-9OE">
+                                <rect key="frame" x="208" y="122" width="184" height="184"/>
+                                <accessibility key="accessibilityConfiguration" identifier="scaleImage"/>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1AP-f7-T7N">
+                                <rect key="frame" x="276" y="433" width="51" height="31"/>
+                                <accessibility key="accessibilityConfiguration" identifier="scaleSwitch"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Onc-5u-9OE" firstAttribute="centerX" secondItem="rI4-gm-IAV" secondAttribute="centerX" id="Fem-WX-at2"/>
+                            <constraint firstItem="1AP-f7-T7N" firstAttribute="centerX" secondItem="rI4-gm-IAV" secondAttribute="centerX" id="WiO-Pe-T5y"/>
+                            <constraint firstItem="1AP-f7-T7N" firstAttribute="centerX" secondItem="rI4-gm-IAV" secondAttribute="centerX" id="b5t-UY-RAC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scaleImage" destination="Onc-5u-9OE" id="bzg-U3-elO"/>
+                        <outlet property="scaleSwitch" destination="1AP-f7-T7N" id="9mh-KP-Kzk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FaX-Qh-6Nf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1187" y="417"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oaf-DA-rdQ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Nr-jt-a3G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BJb-9P-HN3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zja-o6-4I1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3nB-os-n4M"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-379" y="-103"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sample" width="250" height="250"/>
+    </resources>
+</document>

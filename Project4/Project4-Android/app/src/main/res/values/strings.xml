@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Project4</string>
+    <string name="title_activity_scale">ScaleActivity</string>
+    <string name="title_activity_sample">SampleActivity</string>
+</resources>
